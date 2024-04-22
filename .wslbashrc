@@ -119,5 +119,23 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias metis='cd /home/aaliyan/techwards/metis/metis-app && . ./setenv.sh'
+alias dc='. ./setenv.sh && docker-compose'
+alias dce='. ./setenv.sh && docker-compose exec'
+alias web='. ./setenv.sh && docker-compose exec web bash'
+alias db_pgs='. ./setenv.sh && docker-compose exec db_pg psql -U postgres'
+alias db_pg='. ./setenv.sh && docker-compose exec db_pg bash'
+ 
+# Set up an a lias like this for each university you want to run
+alias duke='. ./setenv.sh && docker-compose exec duke bash'
+alias dukes='. ./setenv.sh && docker-compose exec duke ./app/manage.py shell_plus'
+alias duketail='. ./setenv.sh && docker-compose exec duke tail -f /var/log/supervisor/metis.uwsgi.log'
+alias dukeworker='. ./setenv.sh && docker-compose exec duke tail -f /var/log/supervisor/metis.worker.log'
+
+export GOROOT="/usr/local/go"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+export PATH=$PATH:"/mnt/c/Users/Lenovo/AppData/Local/Programs/Microsoft VS Code/bin"
+export PATH=$PATH:"/mnt/c/Users/Lenovo/Downloads/sonar-scanner-cli-5.0.1.3006-linux/sonar-scanner-5.0.1.3006-linux/bin"
 eval "$(gh copilot alias -- bash)"
-. "$HOME/.cargo/env"
