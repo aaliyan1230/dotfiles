@@ -51,7 +51,7 @@ sudo apt install pgadmin4
 
 # Install gh ang ghcs ghce
 sudo sudo apt install gh
-gh extension install github/copilot-cli
+gh extension install github/gh-copilot
 
 # Install Google Chrome
 sudo apt update
